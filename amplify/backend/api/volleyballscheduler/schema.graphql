@@ -1,0 +1,37 @@
+type MatchSchedule @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  competing_teams: [Teams] @hasMany(indexName: "byMatchSchedule", fields: ["id"])
+  game_time: String
+}
+
+type MatchHistory @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  result_1: String
+  timestamp: AWSDateTime
+  competing_teams: [Teams] @hasMany(indexName: "byMatchHistory", fields: ["id"])
+}
+
+type SubstitutionsRequest @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  team_name: Teams @hasOne
+  confirmed_players: [Players] @hasMany(indexName: "bySubstitutionsRequest", fields: ["id"])
+  scheduled_match: MatchSchedule @hasOne
+}
+
+type Teams @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  team_name: String
+  elo_rating: String
+  played_games: String
+  matchscheduleID: ID! @index(name: "byMatchSchedule")
+  matchhistoryID: ID! @index(name: "byMatchHistory")
+}
+
+type Players @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  phone_number: String
+  gender: String
+  team_name: Teams @hasOne
+  substitutionsrequestID: ID! @index(name: "bySubstitutionsRequest")
+}
+ 

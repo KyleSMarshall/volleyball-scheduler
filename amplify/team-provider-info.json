@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-volleyballscheduler-staging-202425-authRole",
+      "UnauthRoleArn": "arn:aws:iam::340567151945:role/amplify-volleyballscheduler-staging-202425-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::340567151945:role/amplify-volleyballscheduler-staging-202425-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-volleyballscheduler-staging-202425-deployment",
+      "UnauthRoleName": "amplify-volleyballscheduler-staging-202425-unauthRole",
+      "StackName": "amplify-volleyballscheduler-staging-202425",
+      "StackId": "arn:aws:cloudformation:ca-central-1:340567151945:stack/amplify-volleyballscheduler-staging-202425/06570500-5986-11ee-b12f-0664d89a5bc6",
+      "AmplifyAppId": "d1fctia0l9yxed"
+    }
+  }
+}
